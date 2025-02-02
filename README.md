@@ -1,0 +1,10 @@
+**This File contains the set of useful git commands in the workspace**
+git clone https://github.com/your-username/repository-name.git  --->  To clone the Repository using URL
+cd repository-name  --> Navigate to that repo
+mkdir new-folder-name  --> to create a new folder
+echo > example.py --> creates a example.py file
+git pull origin main --rebase   --> to fetch and merge remote changes, to resolve conflicts in local branch (NEED to run before pushing ONLY if any changes to repo)
+git add example.py   --> to add specific file
+git commit -m "Fixed bug in example.py"  --> to commit changes
+git push origin main  --> to push into repo in main branch
+
