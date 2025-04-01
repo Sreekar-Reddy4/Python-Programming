@@ -16,46 +16,47 @@ def checkPrime(n):
         return False
 
 if __name__ == "__main__":
-    n = 9
-    isPrime = checkPrime(n)
-    if isPrime:
-        print(n, "is a prime number.")
-    else:
-        print(n, "is not a prime number.")
+    nums=20
+    for n in range(2,nums):
+        isPrime = checkPrime(n)
+        if isPrime:
+            print(n, "is a prime number.")
+        else:
+            print(n, "is not a prime number.")
 
 # 2.  Optimal Approach Time Complexity: O(sqrt(N)), Space Complexity : O(1)
 
                                                    
-import math
+# import math
 
-def checkPrime(n):
-    cnt = 0
+# def checkPrime(n):
+#     cnt = 0
 
-    # Loop through numbers from 1 till the square root of n.
-    for i in range(1, int(math.sqrt(n)) + 1):
+#     # Loop through numbers from 1 till the square root of n.
+#     for i in range(1, int(math.sqrt(n)) + 1):
         
-        if n % i == 0:
-            cnt = cnt + 1
+#         if n % i == 0:
+#             cnt = cnt + 1
 
-            # If n is not a perfect square, count its reciprocal factor.
-            if n // i != i:
-                cnt = cnt + 1
-    if cnt == 2:
-        return True
-    else:
-        return False
+#             # If n is not a perfect square, count its reciprocal factor.
+#             if n // i != i:
+#                 cnt = cnt + 1
+#     if cnt == 2:
+#         return True
+#     else:
+#         return False
 
-# Main function
-def main():
-    n = 1483
-    isPrime = checkPrime(n)
-    if isPrime:
-        print(n, "is a prime number.")
-    else:
-        print(n, "is not a prime number.")
+# # Main function
+# def main():
+#     n = 1483
+#     isPrime = checkPrime(n)
+#     if isPrime:
+#         print(n, "is a prime number.")
+#     else:
+#         print(n, "is not a prime number.")
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
                                 
                                   
