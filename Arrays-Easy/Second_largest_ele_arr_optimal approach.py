@@ -26,7 +26,7 @@ def second_largest(arr,n):
             if arr[i]>large:
                 sec_large=large
                 large=arr[i]
-            elif arr[i]>large and arr[i]!=large:
+            elif arr[i]>sec_large and arr[i]!=large:
                 sec_large = arr[i]
         return sec_large
 
