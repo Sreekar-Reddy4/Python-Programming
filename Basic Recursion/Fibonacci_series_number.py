@@ -39,3 +39,13 @@ print("Fibonacci Series:")
 printFibonacciSeries(n)
 
 
+def fib(n):
+    a=0
+    b=1
+    for _ in range(n+1):
+        print(a) 
+        a,b=b,a+b
+       
+
+print(fib(10))
+

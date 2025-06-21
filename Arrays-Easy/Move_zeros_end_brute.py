@@ -9,3 +9,16 @@ for i in range(n):
         else:
             j+=1
 print(arr)
+
+
+
+##Optimal
+arr=[1, 0, 2, 3, 2, 0, 0, 4, 5, 1]
+n = len(arr)
+pos = 0
+for i in range(n):
+    if arr[i]!=0:
+        arr[pos],arr[i] = arr[pos],arr[i]
+        pos+=1
+
+print(arr)
