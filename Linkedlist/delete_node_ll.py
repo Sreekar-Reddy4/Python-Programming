@@ -17,21 +17,33 @@ class Linkedlist:
                 current = current.next
             current.next = new_node
     
-    def delete_node(self,key):
-        current = self.head
-        if current and current.data == key:
-            self.head = current.next
-            current = None
-        prev = None
-        while current and current.data != key:
-            prev = current
-            current = current.next
-        
-        if current is None:
-            print("Key not found in the list.")
-        
-        prev.next = current.next
-        current = None
+    def delete_node(self, value):
+    current = self.head
+    prev = None
+
+    # Case 1: List is empty
+    if not current:
+        print("List is empty")
+        return
+    
+    # Case 2: First node is the node to delete
+    if current.data == value:
+        self.head = current.next
+        return
+
+    # Case 3: Search for the node to delete
+    while current and current.data != value:
+        prev = current
+        current = current.next
+
+    # Case 4: Value not found
+    if current is None:
+        print("Value not found")
+        return
+
+    # Case 5: Delete the node
+    prev.next = current.next
+
     
     def print_list(self):
         current = self.head
