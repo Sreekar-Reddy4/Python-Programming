@@ -1,4 +1,10 @@
 ### Insert node after a given value will be applicable to all nodes from first to last.
+Insert a node after a given value
+
+Example:
+Insert 25 after the node with value 20
+Input: 10 → 20 → 30 → 40
+Output: 10 → 20 → 25 → 30 → 40
 
 class Node:
     def __init__(self,data=None,next=None):
