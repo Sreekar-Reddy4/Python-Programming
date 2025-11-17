@@ -1,1 +1,100 @@
+#First approach
+
+#Input: head -> 3 -> 8 -> 7 -> 1 -> 3
+
+#Output(value at returned node): 7
+
+#Explanation: There are 5 nodes, so the middle node is the 3rd Node, with value 7.
+
+
+#Input: head -> 2 -> 9 -> 1 -> 4 -> 0 -> 4
+
+#Output(value at returned node): 4
+
+#Explanation: There are 6 nodes, thus both the 3rd and 4th nodes are middle.
+So the 2nd middle node (4th Node) is returned with value 4.
+
+##First approach
+
+class Node:
+    def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
+
+class LinkedList:
+    def __init__(self, head=None):
+        self.head = head
+    
+    def add_node(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+    
+    def len_ll(self):
+        count = 0
+        curr = self.head
+        while curr:
+            count += 1
+            curr = curr.next
+        return count
+    
+    def middle_ll(self):
+        res = self.len_ll()
+        curr = self.head
+        middle_node = res // 2 +1# Corrected to 0-based index
+        var = 1
+        while curr:
+            if var == middle_node:
+                return curr.data
+            var += 1
+            curr = curr.next
+
+sll = LinkedList()
+lst = [3, 8, 7, 1, 3]
+for i in lst:
+    sll.add_node(i)
+print(sll.middle_ll())
+
+
+##Second approach
+
+class Node:
+    def __init__(self, data=None, next=None):
+        self.data = data
+        self.next = next
+
+class LinkedList:
+    def __init__(self, head=None):
+        self.head = head
+    
+    def add_node(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+    
+    def middle_ll(self):
+        slow = self.head
+        fast = self.head
+        while fast and fast.next:
+            slow = slow.next       # Move slow by 1
+            fast = fast.next.next  # Move fast by 2
+        return slow.data           # Slow will be at the middle
+
+
+
+
+
+
+
+
 
