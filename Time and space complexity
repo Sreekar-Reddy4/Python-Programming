@@ -1,1 +1,120 @@
+Time complexity:-
+
+Not the actual time taken but amount of time taken as a function of input size(n).
+
+Example:-
+1) It is not the code execution time like 0.01 sec etc basically it depends on OS like windows,mac and linux etc.
+
+2) Then what actually time complexity is meant ?
+
+   Let's go with a simple example Linear search
+   arr = [1,2,3,4,5]
+   n=len(arr)
+   target=2
+   for i in range(n):
+      if arr[i]==target:
+          print(i)
+
+   In the above example 
+   If n==1 loop runs one time
+   If n==2 loop runs twice
+   If n==3 loop runs thrice
+   If n==1000 loop runs thousand times and so on
+
+   So the best case for linear search is if target is found in the first index itself and worst case is found if target is found in the last index.
+
+   Now we evaluate time complexity for linear search
+
+  if i/p size n=1 then operation time is 1
+  if i/p size n=2 then operation time is 2
+  if i/p size n=3 then operation time is 3
+  if i/p size n=4 then operation time is 4
+  if i/p size n=5 then operation time is 5
+  ........................................
+  
+  if i/p size n=10^5 then operation time is 10^5
+  
+
+  By observing the trend we can build a mathematical equation y=x 
+  f(x) = x ----> It can be written as O(n)
+  
+  Note:- Our aim is to build a algorithm which works better in worst case scenarios because in real word applications handle millions of data.
+
+
+
+
+Big O Notation :- It is a symbol representation of a function example := $5 
+
+For a linear search worst case time complexity is O(n) 
+Similarly for a complex equations like f(n) = 4*n^2+5*n+1 
+Procedure to find complexity for the above functions
+1) ignore constants 
+2) consider highest power of variable
+Answer is O(n^2)
+
+
+Space complexity :-
+
+Amount of space taken by an algorithm as a function of input size of n :
+
+i/p ---> arr = [1,2,3,4,5,6]
+
+o/p ---> sum -- New variable 
+
+So irrespective of i/p size of an array the space complexity of new variables will be O(K). Where 'K' defines constant where k might be any number
+As we ignore constants therefore 
+Space complexity will be O(1).
+
+
+Common time complexities:-
+
+O(1) - Constant
+
+Sum numbers from 1 to N.
+int n = 10
+res = n*(n+1)/2
+print(res)
+
+In the above program we are not using any loops so the time complexity is O(1)
+
+O(n) 
+
+Examples :- Calculating n factorial,kadanes algorithm and calculation of factorial using dp.
+
+
+O(n*n),O(n*n*n)
+
+Examples :- It is applied for number of for loops and application is bubble sort , insertion sort and selection sort worst case time complexities.
+
+If it is two - O(n*n)
+
+If it is three - O(n*n*n)
+
+
+O(logn) ,O(nlogn)
+
+Examples :- Merge sort , quick sort , binary search , greedy algos
+O(logn) ---> Binary search
+O(nlogn) ---> Merge sort , quick sort , greedy algos
+
+
+O(2^n) and O(n!)
+
+Examples :- Recursion time complexity
+
+
+
+
+
+
+
+
+  
+  
+
+
+            
+
+
+
 
