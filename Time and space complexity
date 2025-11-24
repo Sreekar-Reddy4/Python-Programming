@@ -102,6 +102,38 @@ O(2^n) and O(n!)
 
 Examples :- Recursion time complexity
 
+For factorial problem recursion time complexity is found using recurrence relation
+
+TC = (Total no of rec calls) *(work in each calls)
+
+Example:- 
+
+def fact(n):
+     if n==0:
+       return 1
+     else:
+        return n*fact(n-1)
+
+If n = 4 there are five calls i.e. f(4),f(3),f(2),f(1),f(0)
+Similarly for n ~ (n+1)
+k - Defines no of operations inside the functions i.e. basically constant 
+TC = n*k ~= n = O(n)
+
+SC = Depth of recursive tree * mem in each cell
+
+SC = Height of call * mem in each call = n*k = O(n)
+
+
+Recursive fibanocci:-
+def fib(n):
+  if n==0 or n==1: 
+      return n
+  else:
+      return fib(n-1)+fib(n-2)
+
+TC = (Total no of rec calls) *(work in each calls) = 2^n-1*k = O(2^n)
+
+SC = n*1 = O(n)
 
 
 
