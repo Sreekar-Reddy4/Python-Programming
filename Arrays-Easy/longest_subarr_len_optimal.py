@@ -13,7 +13,8 @@ def len_sub_arr(arr,N,k):
 
         if remaining in d:
             max_length = max(max_length,i-d[remaining])
-
-        d[prefix_sum]=i
+            
+        if prefix_sum not in d:
+            d[prefix_sum]=i
 
     return max_length
