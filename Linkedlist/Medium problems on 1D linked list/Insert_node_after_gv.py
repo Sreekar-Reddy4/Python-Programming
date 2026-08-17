@@ -1,10 +1,10 @@
-### Insert node after a given value will be applicable to all nodes from first to last.
-Insert a node after a given value
+# ### Insert node after a given value will be applicable to all nodes from first to last.
+# Insert a node after a given value
 
-Example:
-Insert 25 after the node with value 20
-Input: 10 → 20 → 30 → 40
-Output: 10 → 20 → 25 → 30 → 40
+# Example:
+# Insert 25 after the node with value 20
+# Input: 10 → 20 → 30 → 40
+# Output: 10 → 20 → 25 → 30 → 40
 
 class Node:
     def __init__(self,data=None,next=None):
@@ -36,6 +36,7 @@ class LinkedList:
     def insert_node_after_gv(self,data,var):
         new_node = Node(data)
         current = self.head
+        count = 0
         while current:
             if current.data==var:
                 break
@@ -55,5 +56,5 @@ ll.add_node(10)
 ll.add_node(20)
 ll.add_node(30)
 ll.add_node(40)
-ll.insert_node_after_gv(25,40)
+ll.insert_node_after_gv(25,0)
 ll.print_ll()

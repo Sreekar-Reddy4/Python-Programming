@@ -23,12 +23,13 @@ class Linkedlist:
         if pos == 0:
             new_node.next = self.head
             self.head = new_node
-        current = self.head
-        while current and count<pos-1:
-            current = current.next
-            count+=1
-        new_node.next = current.next
-        current.next = new_node
+        else:
+            current = self.head
+            while current and count<pos-1:
+                current = current.next
+                count+=1
+            new_node.next = current.next
+            current.next = new_node
     
     def display(self):
         current = self.head

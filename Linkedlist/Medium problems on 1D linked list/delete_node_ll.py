@@ -18,7 +18,7 @@ class Linkedlist:
             current.next = new_node
     
     def delete_node(self, value):
-    current = self.head
+       current = self.head
     prev = None
 
     # Case 1: List is empty

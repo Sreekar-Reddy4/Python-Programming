@@ -1,0 +1,268 @@
+✅ What is a Stack?
+
+A Stack is a Linear Data Structure that follows the rule:
+
+LIFO — Last In, First Out
+
+Meaning:
+
+The last item pushed into the stack will be the first item removed.
+
+🔹 Real Life Analogy
+
+Think of a stack of plates:
+
+You place plates one above another → push
+
+You remove the top plate first → pop
+
+The last plate placed becomes the first one removed.
+
+Key Operations
+
+| Operation        | Meaning                           |
+| ---------------- | --------------------------------- |
+| **push(x)**      | Add an element on top of stack    |
+| **pop()**        | Remove and return top element     |
+| **peek()/top()** | View top element without removing |
+| **isEmpty()**    | Checks if stack has elements      |
+| **size()**       | Returns number of elements        |
+
+
+1. Stack Using Linked List
+
+Unlike arrays, a linked-list based stack grows dynamically and does not rely on fixed memory size.
+
+📌 Node Structure
+
+Each node stores:
+
+data
+
+link to next node
+
+[ data | next ]
+
+📌 Stack Logic
+
+We treat the head (front) of linked list as stack top because insertion and deletion here is O(1).
+
+
+
+
+⭐ What is a Queue?
+
+A Queue is a linear data structure that follows:
+
+FIFO — First In, First Out
+
+Meaning —
+the element inserted first is the one removed first.
+
+⭐ Real-life Analogy
+
+Think of people waiting at a ticket counter:
+
+New people join at the back
+
+Service happens from the front
+
+That is exactly how Queue works.
+
+
+
+⭐ Two Main Queue Operations
+1️⃣ Enqueue (Insertion)
+
+➡ Adds an element at the rear (back) of the queue
+
+Example:
+
+Perform:
+
+enqueue(10)
+enqueue(20)
+enqueue(30)
+
+
+Queue becomes:
+
+Front → [10][20][30] ← Rear
+
+
+✔ Elements maintain arrival order
+✔ New items always go at the rear
+
+2️⃣ Dequeue (Deletion)
+
+➡ Removes and returns element from the front
+
+Example:
+
+Queue before dequeue:
+
+Front → [10][20][30] ← Rear
+
+
+Perform:
+
+dequeue()
+
+
+Removes 10 → first inserted value
+
+Queue becomes:
+
+Front → [20][30] ← Rear
+
+
+✔ FIFO maintained — oldest element leaves first
+
+🧠 Why FIFO Works?
+
+Because:
+
+✔ Enqueue inserts at rear
+✔ Dequeue removes from front
+
+➡ Together they enforce “first in, first out”.
+
+⭐ Quick Python-Like Example (Pseudo-code)
+Enqueue:
+enqueue(10) → [10]
+enqueue(20) → [10, 20]
+enqueue(30) → [10, 20, 30]
+
+Dequeue:
+dequeue() → removes 10  → [20, 30]
+dequeue() → removes 20  → [30]
+
+⭐ Where Are Queues Used?
+
+✔ CPU scheduling
+✔ Task queues
+✔ Printer buffer
+✔ Messaging systems (Kafka, RabbitMQ)
+✔ Customer service systems
+
+Whenever ordered processing is needed — queue is used.
+
+🎯 Final Summary
+
+✔ Queue = FIFO structure
+✔ enqueue → insert at rear
+✔ dequeue → remove at front
+✔ Together they ensure first inserted is first removed
+
+Simple, predictable processing order — just like real-world queues 👍
+
+
+Internal working of queue.pop(0)
+
+⭐ But what happened internally?
+
+Python must shift every other element left by one index.
+
+Meaning:
+
+Before pop	After pop
+10	-- removed --
+20	moves to index 0
+30	moves to index 1
+40	moves to index 2
+
+So Python performs 3 operations:
+
+✔ Move 20
+✔ Move 30
+✔ Move 40
+
+📌 For a list of size N → it shifts N−1 elements.
+
+This shifting takes linear time: O(n)
+
+
+
+| Operation      | Time complexity | Why                |
+| -------------- | --------------- | ------------------ |
+| pop() (end)    | **O(1)**        | No shifting        |
+| pop(0) (front) | **O(n)**        | Shift all elements |
+
+Python provides optimized queue implementation:
+
+from collections import deque
+
+
+Because deque removes from both front and rear in O(1) time.
+
+
+
+✅ Queue Using Linked List — Summary
+✔ Queue follows FIFO (First In First Out)
+
+➡ First inserted element is removed first.
+
+📌 Two main pointers:
+front → points to the first element
+rear → points to the last element
+📌 Enqueue (Insert)
+
+✔ Happens at rear
+
+Steps:
+
+Create new node
+
+Attach it after current rear
+
+Move rear pointer to new node
+
+Special case:
+If queue was empty → front = rear = new_node
+
+➡ Time complexity: O(1)
+
+📌 Dequeue (Remove)
+
+✔ Happens from front
+
+Steps:
+
+Store front node
+
+Move front pointer to next node
+
+If queue becomes empty → set rear = None too
+
+Return removed value
+
+➡ Time complexity: O(1)
+
+🧠 How size/count works?
+
+Traverse from front, follow .next links until None.
+Rear does not affect traversal — it only helps fast insertion.
+
+🔑 Why Linked List Queue is efficient?
+
+✔ No shifting elements
+✔ No fixed size limitation
+✔ Both enqueue & dequeue take O(1)
+
+⭐ Quick Mental Model
+
+Front = first person in a line
+
+Rear = last person entering the line
+
+New people join at rear
+
+First person leaves from front
+
+
+
+****** 🧠 Super Short Mental Rule
+
+📌 Rightmost value in output = front of queue
+
+because reversing input brings queue front to stack top.

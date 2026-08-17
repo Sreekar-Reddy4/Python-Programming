@@ -12,7 +12,7 @@
 #Output(value at returned node): 4
 
 #Explanation: There are 6 nodes, thus both the 3rd and 4th nodes are middle.
-So the 2nd middle node (4th Node) is returned with value 4.
+# So the 2nd middle node (4th Node) is returned with value 4.
 
 ##First approach
 

@@ -1,0 +1,58 @@
+A monotonic stack is a stack that always stays in sorted order (either increasing or decreasing).
+
+✅ Why “monotonic”?
+
+Because the values in the stack move in only one direction:
+
+1) Monotonic Increasing Stack
+
+Stack values are increasing from bottom → top
+
+Example:
+[2, 5, 8, 10] ✅
+
+If a new number comes: 6
+
+6 is smaller than 10 → pop 10
+
+6 is smaller than 8 → pop 8
+
+6 is bigger than 5 → stop
+
+push 6
+
+Now stack becomes:
+[2, 5, 6]
+
+✅ Used when you want Next Smaller Element (or Previous Smaller)
+
+2) Monotonic Decreasing Stack
+
+Stack values are decreasing from bottom → top
+
+Example:
+[10, 8, 5, 2] ✅
+
+If new number comes: 6
+
+6 is bigger than 2 → pop 2
+
+6 is bigger than 5 → pop 5
+
+6 is smaller than 8 → stop
+
+push 6
+
+Now stack becomes:
+[10, 8, 6]
+
+✅ Used when you want Next Greater Element (or Previous Greater)
+
+🔥 Simple Rule to Remember
+While pushing an element:
+
+✅ Keep removing elements that break the order
+
+Increasing stack → pop while top > current
+
+Decreasing stack → pop while top < current
